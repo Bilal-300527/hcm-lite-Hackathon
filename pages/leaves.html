@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leave Governance - HCM Lite</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-building-user brand-icon"></i>
+                <h2>HCM Lite <span class="role-badge">Admin</span></h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="admin.html"><i class="fa-solid fa-chart-pie"></i> Executive Overview</a></li>
+                <li><a href="employees.html"><i class="fa-solid fa-users-gear"></i> Manage HR & Staff</a></li>
+                <li><a href="leaves.html" class="active"><i class="fa-solid fa-clipboard-check"></i> Leave Governance</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-sliders"></i> System Settings</a></li>
+            </ul>
+
+            <div class="user-profile-summary">
+                <div class="user-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="user-info">
+                    <span id="user-display-name">Super Admin</span>
+                    <small>System Administrator</small>
+                </div>
+                <a href="../index.html" class="logout-btn" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="header-title">
+                    <h1>Leave Requests Management</h1>
+                    <p>Approve or reject employee leave applications</p>
+                </div>
+                <div class="top-bar-right">
+                    <button class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+                    </button>
+                </div>
+            </header>
+            <div class="panel-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Applicant</th>
+                            <th>Role</th>
+                            <th>Dates</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leave-requests-body">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="../js/storage.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/leave.js"></script>
+</body>
+</html>

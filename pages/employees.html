@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee & HR Management - HCM Lite</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-building-user brand-icon"></i>
+                <h2>HCM Lite <span class="role-badge">Admin</span></h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="admin.html"><i class="fa-solid fa-chart-pie"></i> Executive Overview</a></li>
+                <li><a href="employees.html" class="active"><i class="fa-solid fa-users-gear"></i> Manage HR & Staff</a></li>
+                <li><a href="leaves.html"><i class="fa-solid fa-clipboard-check"></i> Leave Governance</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-sliders"></i> System Settings</a></li>
+            </ul>
+
+            <div class="user-profile-summary">
+                <div class="user-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="user-info">
+                    <span id="user-display-name">Super Admin</span>
+                    <small>System Administrator</small>
+                </div>
+                <a href="../index.html" class="logout-btn" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="header-title">
+                    <h1>Staff & HR Management</h1>
+                    <p>Add, assign roles, edit details, or manage employee credentials</p>
+                </div>
+                <div class="top-bar-right">
+                    <button class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Add Member Form -->
+                <div class="panel-box">
+                    <div class="panel-header">
+                        <h2><i class="fa-solid fa-user-plus"></i> Add New HR or Employee</h2>
+                    </div>
+                    <form id="add-user-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="user-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="user-email" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="user-pass" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Assign Role</label>
+                            <select id="user-role" required>
+                                <option value="employee">Employee</option>
+                                <option value="hr">HR Manager</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Department</label>
+                            <input type="text" id="user-dept" placeholder="Engineering / HR / Sales" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Monthly Salary ($)</label>
+                            <input type="number" id="user-salary" placeholder="5000" required>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block"><i class="fa-solid fa-plus"></i> Register Member</button>
+                    </form>
+                </div>
+
+                <!-- Directory with Live Search & Actions -->
+                <div class="panel-box">
+                    <div class="panel-header">
+                        <h2><i class="fa-solid fa-users"></i> Directory</h2>
+                    </div>
+
+                    <!-- Live Search Input -->
+                    <div class="search-box-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search-input" class="search-input" placeholder="Search by name or department...">
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Department</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-directory-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit User Modal Popup -->
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-user-pen"></i> Edit Member Details</h3>
+                <button class="close-btn" onclick="closeEditModal()">&times;</button>
+            </div>
+            <form id="edit-user-form">
+                <input type="hidden" id="edit-user-id">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="edit-user-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="edit-user-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Assign Role</label>
+                    <select id="edit-user-role" required>
+                        <option value="employee">Employee</option>
+                        <option value="hr">HR Manager</option>
+                        <option value="admin">System Admin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Department</label>
+                    <input type="text" id="edit-user-dept" required>
+                </div>
+                <div class="form-group">
+                    <label>Monthly Salary ($)</label>
+                    <input type="number" id="edit-user-salary" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/employees.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Control Panel - HCM Lite</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-building-user brand-icon"></i>
+                <h2>HCM Lite <span class="role-badge">Admin</span></h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="admin.html" class="active"><i class="fa-solid fa-chart-pie"></i> Executive Overview</a></li>
+                <li><a href="employees.html"><i class="fa-solid fa-users-gear"></i> Manage HR & Staff</a></li>
+                <li><a href="leaves.html"><i class="fa-solid fa-clipboard-check"></i> Leave Governance</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-sliders"></i> System Settings</a></li>
+            </ul>
+
+            <div class="user-profile-summary">
+                <div class="user-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="user-info">
+                    <span id="user-display-name">Super Admin</span>
+                    <small>System Administrator</small>
+                </div>
+                <a href="../index.html" class="logout-btn" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="header-title">
+                    <h1>Executive Control Panel</h1>
+                    <p>Overview of HR Managers, Workforce Stats & Governance</p>
+                </div>
+                <div class="top-bar-right">
+                    <button class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+                    </button>
+                    <div class="live-date">
+                        <i class="fa-regular fa-calendar"></i> Today: <span id="current-date">--</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="cards-grid">
+                <div class="card card-purple">
+                    <div class="card-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <div class="card-data">
+                        <h3>HR Managers</h3>
+                        <p id="total-hr-count">1</p>
+                    </div>
+                </div>
+                <div class="card card-blue">
+                    <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="card-data">
+                        <h3>Total Employees</h3>
+                        <p id="total-emp-count">5</p>
+                    </div>
+                </div>
+                <div class="card card-green">
+                    <div class="card-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <div class="card-data">
+                        <h3>Present Today</h3>
+                        <p id="present-count">4</p>
+                    </div>
+                </div>
+                <div class="card card-orange">
+                    <div class="card-icon"><i class="fa-solid fa-user-clock"></i></div>
+                    <div class="card-data">
+                        <h3>On Leave / Late</h3>
+                        <p id="leave-late-count">1 / 0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-grid">
+                <div class="panel-box">
+                    <div class="panel-header">
+                        <h2><i class="fa-solid fa-sitemap"></i> HR Managers & Department Control</h2>
+                        <a href="employees.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add HR Manager</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>HR Manager</th>
+                                <th>Department</th>
+                                <th>Employees</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="hr-table-body">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel-box smart-helper-panel">
+                    <div class="panel-header">
+                        <h2><i class="fa-solid fa-robot"></i> Executive AI Bot</h2>
+                    </div>
+                    <div id="chat-box" class="chat-container">
+                        <div class="chat-message bot">
+                            <i class="fa-solid fa-robot"></i>
+                            <div class="msg-content">Welcome Admin! Ask me about HR status or employee records.</div>
+                        </div>
+                    </div>
+                    <div class="chat-input-bar">
+                        <input type="text" id="chat-input" placeholder="Type question...">
+                        <button id="send-chat-btn" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/helper.js"></script>
+</body>
+</html>

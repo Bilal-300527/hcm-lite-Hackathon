@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCM Lite - Login & First Run Setup</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+    <div class="auth-card">
+        <button id="theme-toggle-btn" class="theme-toggle-fixed" title="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <div class="auth-header">
+            <i class="fa-solid fa-building-user auth-logo"></i>
+            <h1>HCM Lite</h1>
+            <p>Enterprise Management System</p>
+        </div>
+
+        <div class="tab-container">
+            <button class="tab-btn active" id="tab-login" onclick="switchAuthTab('login')">Portal Login</button>
+            <button class="tab-btn" id="tab-setup" onclick="switchAuthTab('setup')">Admin Setup</button>
+        </div>
+
+        <form id="login-form" class="auth-form">
+            <div class="form-group">
+                <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                <input type="email" id="login-email" placeholder="e.g. admin@company.com" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-lock"></i> Password</label>
+                <input type="password" id="login-password" placeholder="••••••••" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-user-shield"></i> Access Role</label>
+                <select id="login-role" required>
+                    <option value="admin">System Admin</option>
+                    <option value="hr">HR Manager</option>
+                    <option value="employee">Employee</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-right-to-bracket"></i> Login to System</button>
+        </form>
+
+        <form id="setup-form" class="auth-form hidden">
+            <div class="form-group">
+                <label><i class="fa-solid fa-building"></i> Company Name</label>
+                <input type="text" id="setup-company" placeholder="e.g. Saylani Tech Solutions" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-user"></i> Admin Full Name</label>
+                <input type="text" id="setup-admin-name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-envelope"></i> Admin Email</label>
+                <input type="email" id="setup-admin-email" placeholder="admin@company.com" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-lock"></i> Master Password</label>
+                <input type="password" id="setup-admin-pass" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-block"><i class="fa-solid fa-gears"></i> Initialize System</button>
+        </form>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

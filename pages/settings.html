@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Policies - HCM Lite</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-building-user brand-icon"></i>
+                <h2>HCM Lite <span class="role-badge">Admin</span></h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="admin.html"><i class="fa-solid fa-chart-pie"></i> Executive Overview</a></li>
+                <li><a href="employees.html"><i class="fa-solid fa-users-gear"></i> Manage HR & Staff</a></li>
+                <li><a href="leaves.html"><i class="fa-solid fa-clipboard-check"></i> Leave Governance</a></li>
+                <li><a href="settings.html" class="active"><i class="fa-solid fa-sliders"></i> System Settings</a></li>
+            </ul>
+
+            <div class="user-profile-summary">
+                <div class="user-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="user-info">
+                    <span id="user-display-name">Super Admin</span>
+                    <small>System Administrator</small>
+                </div>
+                <a href="../index.html" class="logout-btn" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="header-title">
+                    <h1>Company Policy Settings</h1>
+                    <p>Configure office work hours and leave quotas</p>
+                </div>
+                <div class="top-bar-right">
+                    <button class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+                    </button>
+                </div>
+            </header>
+            <div class="panel-box" style="max-width: 500px;">
+                <form id="settings-form">
+                    <div class="form-group">
+                        <label>Office Start Time</label>
+                        <input type="time" id="start-time" value="09:00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Grace Minutes</label>
+                        <input type="number" id="grace-mins" value="15" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Yearly Leave Quota</label>
+                        <input type="number" id="quota" value="18" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Rules</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="../js/storage.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+</html>

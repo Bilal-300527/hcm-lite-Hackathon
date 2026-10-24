@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monthly Payslip - HCM Lite</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-building-user brand-icon"></i>
+                <h2>HCM Lite <span class="role-badge">Staff</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="employee.html"><i class="fa-solid fa-house-user"></i> My Portal</a></li>
+                <li><a href="payslip.html" class="active"><i class="fa-solid fa-file-invoice-dollar"></i> My Payslip</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Monthly Salary Slip</h1>
+                <div class="top-bar-right">
+                    <button class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+                    </button>
+                    <button class="btn btn-primary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Payslip</button>
+                </div>
+            </header>
+            <div class="panel-box" style="max-width: 500px;">
+                <h3>Salary Breakup</h3>
+                <br>
+                <p><strong>Employee:</strong> <span id="slip-name">-</span></p>
+                <p><strong>Department:</strong> <span id="slip-dept">-</span></p>
+                <p><strong>Base Salary:</strong> $<span id="slip-base">0</span></p>
+                <p><strong>Deductions:</strong> $<span id="slip-deduct">0</span></p>
+                <hr style="margin: 16px 0; border: 0; border-top: 1px solid var(--border-color);">
+                <h2>Net Salary: $<span id="slip-net">0</span></h2>
+            </div>
+        </main>
+    </div>
+    <script src="../js/storage.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/payslip.js"></script>
+</body>
+</html>
